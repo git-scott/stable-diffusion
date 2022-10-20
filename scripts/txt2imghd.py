@@ -474,7 +474,7 @@ def text2img2(opt: Options):
     for base_filename in generated:
         for _ in trange(opt.passes, desc="Passes"):
 #            realesrgan2x(opt.realesrgan, os.path.join(sample_path, f"{base_filename}.png"), os.path.join(sample_path, f"{base_filename}u.png"))
-            realesrgan2x("python /meadowrun/code0/Real-ESRGAN/inference_realesrgan.py", os.path.join(sample_path, f"{base_filename}.png"), os.path.join(sample_path, f"{base_filename}u.png"))
+            realesrgan2x("python3 /meadowrun/code0/Real-ESRGAN/inference_realesrgan.py", os.path.join(sample_path, f"{base_filename}.png"), os.path.join(sample_path, f"{base_filename}u.png"))
             base_filename = f"{base_filename}u"
 
             source_image = Image.open(os.path.join(sample_path, f"{base_filename}.png"))
