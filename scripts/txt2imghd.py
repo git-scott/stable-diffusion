@@ -478,8 +478,8 @@ def text2img2(opt: Options):
 #            realesrgan2x(opt.realesrgan, os.path.join(sample_path, f"{base_filename}.png"), os.path.join(sample_path, f"{base_filename}u.png"))
             realesrgan2x("python Real-ESRGAN/inference_realesrgan.py", os.path.join(sample_path, f"{base_filename}.png"), os.path.join(sample_path, f"{base_filename}u.png"))
             base_filename = f"{base_filename}u"
-
-            source_image = Image.open(os.path.join(sample_path, f"{base_filename}.png"))
+            source_image = Image.open("/tmp/outputs/samples/00000u.png/00000_out.png")
+#            source_image = Image.open(os.path.join(sample_path, f"{base_filename}.png"))
             og_size = (opt.H,opt.W)
             slices, _ = grid_slice(source_image, opt.gobig_overlap, og_size, False)
 
