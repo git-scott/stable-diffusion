@@ -372,7 +372,7 @@ def realesrgan2x(executable: str, input: str, output: str):
         "-o",
         output,
         "-n",
-        "realesrgan-x4plus"
+        "RealESRGAN_x4plus"
     ])
     process.wait()
 
