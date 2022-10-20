@@ -548,5 +548,9 @@ def text2img2(opt: Options):
         put_watermark(final_output, wm_encoder)
         final_output.save(os.path.join(sample_path, f"{base_filename}.png"))
 
+        import time
+        timestr = time.strftime("%Y%m%d-%H%M%S")
+        final_output.save(os.path.join(sample_path, f"{base_filename}-" + timestr + ".png"))
+
 if __name__ == "__main__":
     main()
