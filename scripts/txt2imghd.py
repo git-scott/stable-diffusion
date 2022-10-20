@@ -365,7 +365,8 @@ def main():
 
 def realesrgan2x(executable: str, input: str, output: str):
     process = subprocess.Popen([
-        executable,
+        "python", 
+        "Real-ESRGAN/inference_realesrgan.py",
         "-i",
         input,
         "-o",
