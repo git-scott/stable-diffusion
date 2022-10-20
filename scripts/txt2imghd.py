@@ -375,7 +375,13 @@ def realesrgan2x(executable: str, input: str, output: str):
         "RealESRGAN_x4plus"
     ])
     process.wait()
-
+    
+    process = subprocess.Popen([
+        "ls",
+        "/tmp/outputs/samples/00000u.png"
+    ])
+    process.wait()
+    
     final_output = Image.open("/tmp/outputs/samples/00000u.png/00000u.png")   ### changed from variable named output
     final_output = final_output.resize((int(final_output.size[0] / 2), int(final_output.size[1] / 2)), get_resampling_mode())
     final_output.save(output)
